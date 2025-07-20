@@ -1,0 +1,39 @@
+[
+    {
+        "image": "/assetsplanet/base.png",
+        "name": "base"
+    },
+    {
+        "image": "/assetsplanet/jupiter.png",
+        "name": "jupiter"
+    },
+  
+    {
+        "image": "/assetsplanet/moon.png",
+        "name": "moon"
+    },
+    {
+        "image": "/assetsplanet/neptune.png",
+        "name": "neptune"
+    },
+    {
+        "image": "/assetsplanet/newgreen.png",
+        "name": "green"
+    },
+     {
+        "image": "/assetsplanet/pink.png",
+        "name": "pink"
+    },
+       {
+        "image": "/assetsplanet/sun.png",
+        "name": "sun"
+    },
+      {
+        "image": "/assetsplanet/uranus.png",
+        "name": "uranus"
+    },
+    {
+        "image": "/assetsplanet/yellow.png",
+        "name": "yellow"
+    }
+]
