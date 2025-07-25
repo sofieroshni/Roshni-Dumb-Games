@@ -84,35 +84,36 @@ function checkForMatch(){
     }
 }
 
-function disableCards(){
+function disableCards(){ //fjerner EventListeners så man ikke kan klikke på de 2 kort igen 
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
 
-    resetBoard();
+    resetBoard(); //reseter variablerne 
 }
 
+//vender kort hvis der er Mismatch
 function unflipCards(){
     setTimeout(() => {
-        firstCard.classList.remove("flipped");
+        firstCard.classList.remove("flipped"); //fjern css-klassen flipped
         secondCard.classList.remove("flipped");
 
-        resetBoard();
-    }, 1000);
+        resetBoard(); //reset boardet
+    }, 1000); //Efter 1 sekund (1000 ms) fjerner vi flipped-klassen, så kortene vises med bagsiden igen.
 }
 
 function resetBoard(){
    firstCard = null;
-   secondCard = null;
-   lockBoard = null;
-
+   secondCard = null; //nulstiller variablerne så der ikek er tegn på at bruger har klikket på noget
+   lockBoard = false; //lås fjernes så man kan klikke på boardet igen
 }
 
 function restart(){
-    resetBoard();
-    shuffleCards();
+    resetBoard(); //sørger for at spillet restarter 
+    shuffleCards(); //at kortene blandes
     score = 0;
     document.querySelector(".score").textContent = score;
     gridContainer.innerHTML = "";
     generateCards();
 }
+
 

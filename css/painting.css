@@ -7,6 +7,21 @@
 .card{
     height: calc(140/ 2*3 );
     width: 140px;
-    
+    position: relative;
+    transform-style: preserve-3d;
+    transition:  all 0.5s ease-in-out;
 
+}
+
+.front-image{
+    width: 100%;
+}
+.card.flipped{
+    transform:rotateY(180deg);
+}
+.front,
+.back{
+    backface-visibility: hidden;
+    position: absolute;
+    
 }
