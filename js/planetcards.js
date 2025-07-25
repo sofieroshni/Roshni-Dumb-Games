@@ -17,16 +17,16 @@ fetch("./json/planetgame/data/cards.json")
 
 
 function shuffleCards(){
-    let currentIndex = cards.length,  // Start med at gemme længden af 'cards-arrayet' i currentIndex.
-        randomIndex, //her gemmer vi den randomsorteret array
-        temporaryValue;
+    let currentIndex = cards.length,  // Start med at gemme længden af 'cards-arrayet' i currentIndex. Dette er således de
+        randomIndex, //her gemmer vi den randomsorteret array, det her vi gemmer den tilfædige index
+        temporaryValue; //
 
-    while (currentIndex !== 0){
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = cards[currentIndex]; //enZZ´´
-        cards[currentIndex] = cards[randomIndex];
-        cards[randomIndex] = temporaryValue;
+    while (currentIndex !== 0){ //imens currentIndex ikke er 0 så skal følgende ske (altså at der er noget inde i arrayet)
+        randomIndex = Math.floor(Math.random() * currentIndex); // Math.random er en indbygget funktion som går ind i arrayet og vælger et tilfældigt tal imellem 0- 1-antal kort. Derefter ganger man det med den nuværende indeks for at få alle kort med. fordi at det ligger inde i math.floor rundes det ned til det nærmeste heltal så der ikke kommer et 1,5 kort. 
+        currentIndex -= 1; //vi arbejder baglæns igennem kortene (trækker en fra) 
+        temporaryValue = cards[currentIndex]; //Jeg putter currentIndex som er den nuværende kort antal ind i cards dette 
+        cards[currentIndex] = cards[randomIndex]; // alt inde i arrayet (det nuværende) bliver nu sat til at være random fordi at det var det vi definerede randomIndex til. Det betyder at alt inde i arrayet "bytter plads"
+        cards[randomIndex] = temporaryValue; // Derefter siger vi at vores nye værdi er en midlertidlig værdi. 
     }
 }
 
@@ -50,6 +50,8 @@ function generateCards(){
         gridContainer.appendChild(cardElement);             // tilføj kortet til containeren
     });
 }
+
+
 function flipCard(){
     if (lockBoard) return;        // hvis brættet er låst, gør ikke noget
     if (this === firstCard) return;  // hvis man klikker på samme kort igen, gør ikke noget
@@ -70,14 +72,15 @@ function flipCard(){
 
 
 function checkForMatch(){
-    let isMatch = firstCard.dataset.name === secondCard.dataset.name;
+    let isMatch = firstCard.dataset.name === secondCard.dataset.name; //definerer isMatch så det 
+    // svarer til at dataet for første og andet kort matcher
 
     if (isMatch) {
-        score++;
-        document.querySelector(".score").textContent = score;
-        disableCards();
+        score +=5; //scorer ska lgå op med 5
+        document.querySelector(".score").textContent = score; // henter html element og siger at dets textContent skal svarer til scorer
+        disableCards(); //hvis der er match skal funktionen disable cards kører
     } else {
-        unflipCards();
+        unflipCards(); //hvis der ikke er match skal funktionen unflipCards kører og den fjerner ccs-klassen "flipped"
     }
 }
 
@@ -112,3 +115,4 @@ function restart(){
     gridContainer.innerHTML = "";
     generateCards();
 }
+
