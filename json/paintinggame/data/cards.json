@@ -1,0 +1,27 @@
+[
+    {
+        "image":"/assetspaintings/and.png",
+        "name": "and"
+    },
+    {
+        "image": "/assetspaintings/dreng.png",
+        "name": "dreng"
+    },
+    {
+        "image": "/assetspaintings/musik.png",
+        "name": "musik"
+    },
+    {
+        "image": "/assetspaintings/siloers.png",
+        "name": "siloer"
+        
+    },
+    {
+        "image":"/assetspaintings/syret.png",
+        "name": "syret"
+    },
+    {
+        "image": "/assetspaintings/rod.png",
+        "name": "rod"
+    }
+]
