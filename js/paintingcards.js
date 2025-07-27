@@ -46,7 +46,7 @@ function generatePaintingCards(){
         <div class="back"></div>
         
         `;
-    paintingCardElement.addEventlistener("click", flipCard);
+    paintingCardElement.addEventListener("click", flipCard);
         gridContainer.appendChild(paintingCardElement);
     });
 
